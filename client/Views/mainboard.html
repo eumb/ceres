@@ -1,0 +1,536 @@
+<template name="mainboard">
+    <div class="ui stackable grid fluid ">
+        
+       
+    
+
+
+
+
+        <div class="ui row">
+            <div class="ui eight wide fluid column">
+                    
+                <div class="ui stackable centered grid fluid raised segment ">
+                    
+                    
+                    <!-- settings icon in mainboard -->
+                <!--     <div class="floated_right">
+                        
+                    <div class="ui icon top left pointing dropdown">
+                      <i class="wrench icon"></i>
+                      <div class="menu">
+                        <div class="header">Display Density</div>
+                        <div class="item">Comfortable</div>
+                        <div class="item">Cozy</div>
+                        <div class="item">Compact</div>
+                        <div class="ui divider"></div>
+                        <div class="item">Settings</div>
+                        <div class="item">
+                          <i class="dropdown icon"></i>
+                          <span class="text">Upload Settings</span>
+                          <div class="menu">
+                            <div class="item">
+                              <i class="check icon"></i>
+                              Convert Uploaded Files to PDF
+                            </div>
+                            <div class="item">
+                              <i class="check icon"></i>
+                              Digitize Text from Uploaded Files
+                            </div>
+                          </div>
+                        </div>
+                        <div class="item">Manage Apps</div>
+                        <div class="item">Keyboard Shortcuts</div>
+                        <div class="item">Help</div>
+                      </div>
+                   </div>
+                </div> -->
+                
+                
+                    <div class=" ui row ">
+                        <h1>{{_ "mainboard_title"}}</h1>
+                    </div>
+                    
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                  
+                    
+                    <div class="ui five item tabular menu">
+                      
+                        
+                           {{#each sensorsname}}
+                         
+                              <a data-tab={{nodename}} class="item node_name {{active}}">
+                              {{description}}
+                              </a>
+                         
+                          {{/each}}
+                    
+
+                    </div>
+                    {{#if $.Session.equals 'senzor' "Senzor_1"}}
+                    <div class=" ui row ">
+                        
+                        <div class="ui five wide column">
+                            <div id="card" class="ui fluid card">
+                                <div class="content">
+                                    <div class="header left floated card_title_mainboard">
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h10"}}
+                                    </div>
+                                </div>
+                                <div class="extra center aligned content">
+                                    <h1>{{$.Session.get 'sensorw1'}} cb</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui five wide column">
+                            <div id="card" class="ui  fluid  card">
+                                <div class="content">
+                                    <div class="header  left floated card_title_mainboard">
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h30"}}
+                                    </div>
+                                </div>
+                                <div class="extra center aligned content">
+                                    <h1>{{$.Session.get 'sensorw2'}} cb</h1>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="ui five wide column">
+                            <div id="card" class="ui  fluid  card">
+                                <div class="content">
+                                    <div class="header  left floated card_title_mainboard">
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h50"}}
+                                    </div>
+                                </div>
+                                <div class="extra center aligned content">
+                                    <h1>{{$.Session.get 'sensorw3'}} cb</h1>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="ui divider"></div>
+                        <button class="ui black basic button"><a href="/dashboard" data-nodename={{nodename}}>{{_ "details"}}</a></button>
+                    </div>
+                   
+                    {{/if}}
+                    {{#if $.Session.equals 'senzor' "Senzor_2" }}
+                    <div class=" ui row ">
+                        
+                        <div class="ui five wide column">
+                            <div id="card" class="ui fluid card">
+                                <div class="content">
+                                    <div class="header left floated card_title_mainboard">
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h10"}}
+                                    </div>
+                                </div>
+                                <div class="extra center aligned content">
+                                    <h1>{{$.Session.get 'sensorw1'}} cb</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui five wide column">
+                            <div id="card" class="ui  fluid  card">
+                                <div class="content">
+                                    <div class="header  left floated card_title_mainboard">
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h30"}}
+                                    </div>
+                                </div>
+                                <div class="extra center aligned content">
+                                    <h1>{{$.Session.get 'sensorw2'}} cb</h1>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="ui five wide column">
+                            <div id="card" class="ui  fluid  card">
+                                <div class="content">
+                                    <div class="header  left floated card_title_mainboard">
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h50"}}
+                                    </div>
+                                </div>
+                                <div class="extra center aligned content">
+                                    <h1>{{$.Session.get 'sensorw3'}} cb</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="row">
+                        <div class="ui divider"></div>
+                        <button class="ui black basic button"><a href="/dashboard" data-nodename={{nodename}}>{{_ "details"}}</a></button>
+                    </div>
+                   
+                    {{/if}}
+                     {{#if $.Session.equals 'senzor' "Senzor_3" }}
+                    <div class=" ui row ">
+                        
+                        <div class="ui five wide column">
+                            <div id="card" class="ui fluid card">
+                                <div class="content">
+                                    <div class="header left floated card_title_mainboard">
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h10"}}
+                                    </div>
+                                </div>
+                                <div class="extra center aligned content">
+                                    <h1>{{$.Session.get 'sensorw1'}} cb</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui five wide column">
+                            <div id="card" class="ui  fluid  card">
+                                <div class="content">
+                                    <div class="header  left floated card_title_mainboard">
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h30"}}
+                                    </div>
+                                </div>
+                                <div class="extra center aligned content">
+                                    <h1>{{$.Session.get 'sensorw2'}} cb</h1>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="ui five wide column">
+                            <div id="card" class="ui  fluid  card">
+                                <div class="content">
+                                    <div class="header  left floated card_title_mainboard">
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h50"}}
+                                    </div>
+                                </div>
+                                <div class="extra center aligned content">
+                                    <h1>{{$.Session.get 'sensorw3'}} cb</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="row">
+                        <div class="ui divider"></div>
+                        <button class="ui black basic button"><a href="/dashboard" data-nodename={{nodename}}>{{_ "details"}}</a></button>
+                    </div>
+                   
+                    {{/if}}
+                    {{#if $.Session.equals 'senzor' "Senzor_4" }}
+                    <div class=" ui row ">
+                        
+                        <div class="ui five wide column">
+                            <div id="card" class="ui fluid card">
+                                <div class="content">
+                                    <div class="header left floated card_title_mainboard">
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h10"}}
+                                    </div>
+                                </div>
+                                <div class="extra center aligned content">
+                                    <h1>{{$.Session.get 'sensorw1'}} cb</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui five wide column">
+                            <div id="card" class="ui  fluid  card">
+                                <div class="content">
+                                    <div class="header  left floated card_title_mainboard">
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h30"}}
+                                    </div>
+                                </div>
+                                <div class="extra center aligned content">
+                                    <h1>{{$.Session.get 'sensorw2'}} cb</h1>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="ui five wide column">
+                            <div id="card" class="ui  fluid  card">
+                                <div class="content">
+                                    <div class="header  left floated card_title_mainboard">
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h50"}}
+                                    </div>
+                                </div>
+                                <div class="extra center aligned content">
+                                    <h1>{{$.Session.get 'sensorw3'}} cb</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class=" ui row ">
+                        <div class="ui eight wide column">
+                            <div id="card" class="ui  fluid card">
+                                <div class="content">
+                                    <div class="header  left floated card_title_mainboard">
+                                        <i class="wi  wi-thermometer larger_mainboard left floated wi-fw"></i> {{_ "soil_temp_header"}}
+                                    </div>
+                                </div>
+                                <div class="extra center aligned content">
+                                    <h1>{{$.Session.get 'sensortempsoil_t'}} <strong>°C</strong> </h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui eight wide column">
+                            <div id="card" class="ui fluid card">
+                                <div class="content">
+                                    <div class="header left floated card_title_mainboard">
+                                        <i class="wi  wi-thermometer-exterior larger_mainboard left floated wi-fw"></i> {{_ "air_temp_header"}}
+                                    </div>
+                                </div>
+                                <div class="extra center aligned content">
+                                    <h1>{{$.Session.get 'sensorair_temp'}} <strong>°C</strong> </h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" ui row ">
+                        <div class="ui eight wide column">
+                            <div id="card" class="ui fluid card">
+                                <div class="content">
+                                    <div class="header left floated card_title_mainboard">
+                                        <i class="wi  wi-raindrops larger_mainboard left floated wi-fw"></i> {{_ "pluv3_header"}}
+                                      
+                                    </div>
+                                </div>
+                                <div class="extra center aligned content">
+                                    <h1>{{$.Session.get 'sensormeteo_pluv3'}} mm</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui eight wide column">
+                            <div id="card" class="ui fluid card">
+                                <div class="content">
+                                    <div class="header  left floated card_title_mainboard">
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "air_humid_header"}}
+                                       
+                                    </div>
+                                </div>
+                                <div class="extra center aligned content">
+                                    <h1>{{$.Session.get 'sensorair_humid'}} %</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" ui row ">
+                        <div class="ui eight wide column">
+                            <div id="card" class="ui fluid card">
+                                <div class="content">
+                                    <div class="header left floated card_title_mainboard">
+                                        <i class="wi  wi-direction-down-left larger_mainboard left floated wi-fw"></i> {{_ "vane_header"}}
+                                    </div>
+                                </div>
+                                <div class="extra center aligned content">
+                                    <h1>{{$.Session.get 'sensormeteo_vane'}}</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui eight wide column">
+                            <div id="card" class="ui fluid card">
+                                <div class="content">
+                                    <div class="header left floated card_title_mainboard">
+                                        <i class="wi  wi-strong-wind larger_mainboard left floated wi-fw"></i> {{_ "ane_header"}}
+                                    </div>
+                                </div>
+                                <div class="extra center aligned content">
+                                    <h1>{{$.Session.get 'sensormeteo_ane'}} km/h</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="row">
+                        <div class="ui divider"></div>
+                        <button class="ui black basic button"><a href="/dashboard" data-nodename={{nodename}}>{{_ "details"}}</a></button>
+                    </div>
+                   
+                    {{/if}}
+                    {{#if $.Session.equals 'senzor' "Senzor_5" }}
+                    <div class=" ui row ">
+                        
+                        <div class="ui five wide column">
+                            <div id="card" class="ui fluid card">
+                                <div class="content">
+                                    <div class="header left floated card_title_mainboard">
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h10"}}
+                                    </div>
+                                </div>
+                                <div class="extra center aligned content">
+                                    <h1>{{$.Session.get 'sensorw1'}} cb</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui five wide column">
+                            <div id="card" class="ui  fluid  card">
+                                <div class="content">
+                                    <div class="header  left floated card_title_mainboard">
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h30"}}
+                                    </div>
+                                </div>
+                                <div class="extra center aligned content">
+                                    <h1>{{$.Session.get 'sensorw2'}} cb</h1>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="ui five wide column">
+                            <div id="card" class="ui  fluid  card">
+                                <div class="content">
+                                    <div class="header  left floated card_title_mainboard">
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h50"}}
+                                    </div>
+                                </div>
+                                <div class="extra center aligned content">
+                                    <h1>{{$.Session.get 'sensorw3'}} cb</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class=" ui row ">
+                        <div class="ui eight wide column">
+                            <div id="card" class="ui  fluid card">
+                                <div class="content">
+                                    <div class="header  left floated card_title_mainboard">
+                                        <i class="wi  wi-thermometer larger_mainboard left floated wi-fw"></i> {{_ "soil_temp_header"}}
+                                    </div>
+                                </div>
+                                <div class="extra center aligned content">
+                                    <h1>{{$.Session.get 'sensortempsoil_t'}} <strong>°C</strong> </h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui eight wide column">
+                            <div id="card" class="ui fluid card">
+                                <div class="content">
+                                    <div class="header left floated card_title_mainboard">
+                                        <i class="wi  wi-thermometer-exterior larger_mainboard left floated wi-fw"></i> {{_ "air_temp_header"}}
+                                    </div>
+                                </div>
+                                <div class="extra center aligned content">
+                                    <h1>{{$.Session.get 'sensorair_temp'}} <strong>°C</strong> </h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" ui row ">
+                        <div class="ui eight wide column">
+                            <div id="card" class="ui fluid card">
+                                <div class="content">
+                                    <div class="header left floated card_title_mainboard">
+                                        <i class="wi  wi-raindrops larger_mainboard left floated wi-fw"></i> {{_ "pluv3_header"}}
+                                      
+                                    </div>
+                                </div>
+                                <div class="extra center aligned content">
+                                    <h1>{{$.Session.get 'sensormeteo_pluv3'}} mm</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui eight wide column">
+                            <div id="card" class="ui fluid card">
+                                <div class="content">
+                                    <div class="header  left floated card_title_mainboard">
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "air_humid_header"}}
+                                       
+                                    </div>
+                                </div>
+                                <div class="extra center aligned content">
+                                    <h1>{{$.Session.get 'sensorair_humid'}} %</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" ui row ">
+                        <div class="ui eight wide column">
+                            <div id="card" class="ui fluid card">
+                                <div class="content">
+                                    <div class="header left floated card_title_mainboard">
+                                        <i class="wi  wi-direction-down-left larger_mainboard left floated wi-fw"></i> {{_ "vane_header"}}
+                                    </div>
+                                </div>
+                                <div class="extra center aligned content">
+                                    <h1>{{$.Session.get 'sensormeteo_vane'}}</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui eight wide column">
+                            <div id="card" class="ui fluid card">
+                                <div class="content">
+                                    <div class="header left floated card_title_mainboard">
+                                        <i class="wi  wi-strong-wind larger_mainboard left floated wi-fw"></i> {{_ "ane_header"}}
+                                    </div>
+                                </div>
+                                <div class="extra center aligned content">
+                                    <h1>{{$.Session.get 'sensormeteo_ane'}} km/h</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="row">
+                        <div class="ui divider"></div>
+                        <button class="ui black basic button"><a href="/dashboard" data-nodename={{nodename}}>{{_ "details"}}</a></button>
+                    </div>
+                   
+                    {{/if}}
+                </div>
+            </div>
+            <div class="eight wide column">
+                <div class="ui stackable grid centered fluid raised segment ">
+                        
+                              <!-- settings icon in mainboard -->
+                        <!-- <div class="floated_right">
+                                    
+                            <div class="ui icon top left pointing dropdown">
+                              <i class="wrench icon"></i>
+                              <div class="menu">
+                                <div class="header">Display Density</div>
+                                <div class="item">Comfortable</div>
+                                <div class="item">Cozy</div>
+                                <div class="item">Compact</div>
+                                <div class="ui divider"></div>
+                                <div class="item">Settings</div>
+                                <div class="item">
+                                  <i class="dropdown icon"></i>
+                                  <span class="text">Upload Settings</span>
+                                  <div class="menu">
+                                    <div class="item">
+                                      <i class="check icon"></i>
+                                      Convert Uploaded Files to PDF
+                                    </div>
+                                    <div class="item">
+                                      <i class="check icon"></i>
+                                      Digitize Text from Uploaded Files
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="item">Manage Apps</div>
+                                <div class="item">Keyboard Shortcuts</div>
+                                <div class="item">Help</div>
+                              </div>
+                           </div>
+                        </div> -->
+
+                    <h1>{{_ "mainboard_info"}}</h1>
+                    <div class="row">
+                        <div class="ui sixteen wide column">
+                            <h1 class="ui fluid green raised segment">{{_ "no_reco"}}</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="ui sixteen wide column">
+                            <h1 class="ui fluid red raised segment">{{_ "dummy_alert1"}}</h1>
+                        </div>
+                    </div>
+                     <div class="row">
+                        <div class="ui sixteen wide column">
+                            <h1 class="ui fluid red raised segment">{{_ "dummy_alert2"}}</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

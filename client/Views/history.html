@@ -1,0 +1,73 @@
+<template name="history">
+  <div class="ui stackable grid ">
+	<div class="row"> 
+	  	<div class="ui four wide column">
+	  		
+	  		<h3>Export</h3>
+	 	 	<p>{{_ "export_humid_all"}}</p>
+	  		<button id="export" class="export-data btn btn-success" >{{_ "exportButton"}}</button>
+	  	</div>
+	</div>
+	 <div class="row">
+       <div class="twelve column">
+        <div class="graphic">
+    <!--   {{> example1}} -->  <!-- amchart -->
+        </div>
+        </div>
+      </div>
+
+  <!--  <div class="row">
+       <div class="twelve column">
+        
+     {{> highchartsHelper chartId="test" chartWidth="100%" charHeight="100%" chartObject=topGenresChart}}
+        
+        </div>
+      </div> -->
+         <div class="row">
+       <div class="twelve column">
+        <h1>Device data</h1>
+
+        {{#each devicedatas}}
+            {{#each resource}}
+                {{this}}
+            {{/each}}
+        {{/each}}
+        
+        </div>
+      </div>
+<!--     <div class="row">
+  <h1>Timeline</h1>
+{{> tl}}
+</div> -->
+ <div class="row">
+  <h1>Timeline VIS</h1>
+    {{> vChart}}
+  </div>
+</div>  
+
+</template>
+
+
+
+
+<template name="example1">
+
+  <!-- <a href="{{urlFor 'home'}}">Home</a><br>
+  <a href="{{urlFor 'example2'}}">Date Based Line</a><br>
+  <a href="{{urlFor 'example3'}}">Pie Chart Example</a><br><br><br> -->
+ <div id="chartdiv">
+
+  </div>
+</template>
+
+<template name="tl">
+<div id="timeline-embed">
+</div>
+</template>
+<template name="events_timeline">
+  <div id="timeline"></div>
+</template>
+
+<template name="vChart">
+  <div id="visualization"></div>
+</template>
