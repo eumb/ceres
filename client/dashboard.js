@@ -1,7 +1,7 @@
 import { Template } from "meteor/templating";
 
 import { Sensors } from "../imports/collections/sensors.js";
-TempValues = new Mongo.Collection("sensorvalue"); //subscription for cumulated soil temp
+//TempValues = new Mongo.Collection("sensorvalue"); //subscription for cumulated soil temp
 
 
 
@@ -129,9 +129,9 @@ Template.dashboard.onRendered(function(){
        $(".toggle_precipData24").addClass('active');
        $(".toggle_humidData24").addClass('active');
        $(".toggle_soilTempData24").addClass('active'); 
-});
+
 //subscriptions = new SubsManager();
-Template.dashboard.onCreated(function() {
+
 /*  var self = this;
   
 
@@ -432,7 +432,7 @@ Template.dashboard.helpers({
         show: false
       },
       subchart: {
-        show: true
+        show: false
       },
       zoom: {
         enabled: true,
@@ -517,7 +517,7 @@ Template.dashboard.helpers({
           data2: "y2"
         },
 
-        type: 'spline',
+        //type: 'spline',
 
         color: {
           pattern: ["#1f77b4", "#aec7e8", "#ff7f0e"]
@@ -568,7 +568,7 @@ Template.dashboard.helpers({
               value: 10,
               class: "threshold",
               class: "threshold",
-              text: "aprovizionare optimă cu apă",
+              text: "{{aprovizionare optimă cu apă}}",
               position: "start"
             },
             {
@@ -596,7 +596,7 @@ Template.dashboard.helpers({
         show: false
       },
       subchart: {
-        show: true
+        show: false
       },
       zoom: {
         enabled: true,
@@ -661,7 +661,7 @@ Template.dashboard.helpers({
           theDatasoil_t
          
         ],
-        type: 'spline', 
+        //type: 'spline', 
       },
 
       axis: {
@@ -694,7 +694,7 @@ Template.dashboard.helpers({
         }
       },*/
       subchart: {
-        show: true
+        show: false
       },
          point: {
         show: false
@@ -710,7 +710,7 @@ Template.dashboard.helpers({
 
 
 //with comments enabled
- /* myChartDataTemp24h: function() {
+  myChartDataTemp24h: function() {
     var chartNode = Session.get("senzor");
     //console.log(chartNode);
     //dataset = Sensors.find({'nodename':chartNode ,'soil_t':{$exists:true}},{sort: {'created_at' : -1},limit:168}).fetch(); //,'readingdatehour':{$in:[5,6,7,8,9,10,17]}
@@ -840,7 +840,7 @@ Template.dashboard.helpers({
           }
       }
     };
-  },*/
+  },
 
 
   myChartDataTemp1h: function() {
@@ -1123,7 +1123,7 @@ Template.dashboard.helpers({
         show: false
       },
     subchart: {
-        show: true
+        show: false
       },
 
       zoom: {

@@ -17,6 +17,7 @@
     "chart.js": "^2.5.0",
     "meteor-node-stubs": "~0.2.0",
     "moment-timezone": "^0.5.13",
+    "simpl-schema": "^0.3.0",
     "vis": "^4.19.1"
   },
   "postcss": {

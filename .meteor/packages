@@ -47,7 +47,8 @@ momentjs:moment
 #zuuk:stale-session
 gorillastack:c3
 meteorhacks:subs-manager
-meteorhacks:aggregate
+jcbernack:reactive-aggregate
+#meteorhacks:aggregate
 random@1.0.10
 em0ney:amcharts
 meteorhacks:picker
@@ -56,4 +57,7 @@ maazalik:highcharts
 agnito:timeline
 juliancwirko:s-alert
 jorisbontje:vis
-
+aldeed:autoform
+aldeed:collection2-core
+juliancwirko:s-alert-bouncyflip
+eoliphant:autoform-semantic-ui

@@ -1,0 +1,929 @@
+<template name="dash">
+    <div class="ui stackable grid ">
+        <!-- For Senzor 1 -->
+     {{#if Template.subscriptionsReady}} {{#if $.Session.equals 'chartFor' "Senzor_1"}}
+        <h3 class="nodename">{{$.Session.get 'SenzorDescription'}} </h3>
+        <div class="row ui segment ui segment">
+            <div class="ui four wide column">
+                <!-- Umiditate -->
+                <div id="card" class="ui fluid  center aligned card">
+                    <div class="content">
+                        <div class="header card_title">
+                        <i class="wi  wi-humidity larger left floated wi-fw"></i>
+                            {{_ "soil_humid_header"}}
+                            <span class="centered floated"></span>
+                        </div>
+                    </div>
+                   <div class="extra content">
+                        <div class="ui list">
+                            <div>
+                                <div><strong>  {{_ "h10"}}  </strong> </div>
+                                <div>
+                                <span class="item card_value">{{$.Session.get 'sensorw1'}} </span> <span class="card_value_unit">cb</span> 
+                                </div>
+                            </div>
+
+                            <div class="ui divider"></div>
+
+                            <div> <strong>{{_ "h30"}} </strong> </div>
+
+                            <div>
+                              <span class="item card_value">{{$.Session.get 'sensorw2'}} </span> <span class="card_value_unit">cb</span> 
+                            </div>
+
+                            <div class="ui divider"></div>
+
+                            <div> <strong>{{_ "h50"}} </strong> </div> 
+                            
+                            <div>
+                             <span class="item card_value">{{$.Session.get 'sensorw3'}} </span> <span class="card_value_unit">cb</span> 
+                            </div>
+                         
+                        </div>
+                    </div>
+              <!--       <div class="extra content">
+                  <div class="ui two bottom attached basic buttons">
+                      <button class="ui  button toggle_humidData1" type="submit">interval 1h</button>
+                      <button class="ui  active  button toggle_humidData24" type="submit">interval 24h</button>
+                  </div>
+              </div> -->
+                </div>
+            </div>
+            <div class="ui twelve wide column">
+                {{#if $.Session.equals 'humiddisplay' "1hdata"}} {{> c3 data=myChartDataHumid1h id="chart1"}} {{/if}} {{#if $.Session.equals 'humiddisplay' "24hdata" }} {{> c3 data=myChartDataHumid24h id="chart1"}} {{/if}}
+            </div>
+        </div>
+
+        <div class="ui hidden divider"></div>
+        
+        <!-- Temp sol -->
+     <div class="row ui segment">
+            <div class="ui four wide column">
+                <div id="card" class="ui fluid  center aligned card">
+                    <div class="content">
+                        <div class="header card_title">
+                        <i class="wi  wi-thermometer larger left floated wi-fw"></i>
+                            {{_ "soil_temp_header"}}
+                            <span class="centered floated"></span>
+                        </div>
+                    </div>
+                        <div class="extra content">
+                          <!--   <p>{{_ "soil_temp_desc"}}</p> -->
+                           <div> <strong>{{_ "temp10"}} </strong> </div>
+                            <div>
+                             <span class="item card_value">{{$.Session.get 'sensortempsoil_t'}} </span> <span class="card_value_unit">°C</span> 
+                                </div>
+                        </div>
+                   <!--      <div class="description">
+                       <p>{{_ "soil_temp_accumulated"}}</p>
+                   
+                       <h2>{{soilTempValues}} <strong> °C</strong></h2>
+                   </div> -->
+                   
+           <!--    {{#if $.Session.equals 'tempdisplay' "24hdata"}}
+                 <div class="extra content">
+                     Comments {{#each sensortempcommments}}
+                     <strong><p>{{comment_soil_t}}</p></strong>
+                     <span>{{created_at}}</span> {{/each}}
+                 </div>
+                 {{/if}} -->
+               <!--      <div class="extra content">
+                <div class="ui two bottom attached basic buttons">
+                   <button class="ui button toggle_soilTempData1">interval 1h</button>
+                   <button class="ui active button toggle_soilTempData24">interval 24h</button>
+                   </div>
+               </div> -->
+                </div>
+            </div>
+            <div class="ui twelve wide column">
+                {{#if $.Session.equals 'tempdisplay' "1hdata"}} {{> c3 data=myChartDataTemp1h id="chart2"}} {{/if}} {{#if $.Session.equals 'tempdisplay' "24hdata" }} {{> c3 data=myChartDataTemp24h id="chart2"}} {{/if}}
+            </div>
+        </div>
+        {{/if}}
+        {{else}} {{> spinner}} 
+
+       {{/if}}
+        <!-- End Senzor_1 -->
+        <!-- For Senzor 2 -->
+      {{#if Template.subscriptionsReady}}  {{#if $.Session.equals 'chartFor' "Senzor_2"}}
+        
+<h3 class="nodename">{{$.Session.get 'SenzorDescription'}} </h3>
+        <!-- Umiditate -->
+        <div class=" row ui segment">
+            <div class="ui four wide column">
+                
+                <div id="card" class="ui fluid center aligned card">
+                    <div class="content">
+                        <div class="header card_title">
+                         <i class="wi  wi-humidity larger left floated wi-fw"></i>
+                            {{_ "soil_humid_header"}}
+                            <span class="centered floated"></span>
+                        </div>
+                       <!--  <div class="description">
+                           <p>{{_ "soil_humid_desc"}}</p>
+                       </div> -->
+                    </div>
+                    <div class="extra content">
+                        <div class="ui list">
+                            <div>
+                                <div><strong>  {{_ "h10"}}  </strong> </div>
+                                <div>
+                                <span class="item card_value">{{$.Session.get 'sensorw1'}} </span> <span class="card_value_unit">cb</span> 
+                                </div>
+                            </div>
+
+                            <div class="ui divider"></div>
+
+                            <div> <strong>{{_ "h30"}} </strong> </div>
+
+                            <div>
+                              <span class="item card_value">{{$.Session.get 'sensorw2'}} </span> <span class="card_value_unit">cb</span> 
+                            </div>
+
+                            <div class="ui divider"></div>
+
+                            <div> <strong>{{_ "h50"}} </strong> </div> 
+
+                            <div>
+                             <span class="item card_value">{{$.Session.get 'sensorw3'}} </span> <span class="card_value_unit">cb</span> 
+                            </div>
+                         
+                        </div>
+                    </div>
+                  <!--   <div class="extra content">
+                      <div class="ui two bottom attached basic buttons">
+                          <button class="ui button toggle_humidData1">interval 1h</button>
+                          <button class="ui active button toggle_humidData24">interval 24h</button>
+                      </div>
+                  </div> -->
+                </div>
+            </div>
+            <div class="ui twelve wide column">
+                {{#if $.Session.equals 'humiddisplay' "1hdata"}} {{> c3 data=myChartDataHumid1h id="chart1"}} {{/if}} {{#if $.Session.equals 'humiddisplay' "24hdata" }} {{> c3 data=myChartDataHumid24h id="chart1"}} {{/if}}
+            </div>
+        </div>
+        <!-- Temp sol -->
+        <div class="row ui segment">
+            <div class="ui four wide column">
+                <div id="card" class="ui fluid  center aligned card">
+                    <div class="content">
+                        <div class="header card_title">
+                        <i class="wi  wi-thermometer larger left floated wi-fw"></i>
+                            {{_ "soil_temp_header"}}
+                            <span class="centered floated"></span>
+                        </div>
+                    </div>
+                        <div class="extra content">
+                          <!--   <p>{{_ "soil_temp_desc"}}</p> -->
+                           <div> <strong>{{_ "temp10"}} </strong> </div>
+                            <div>
+                             <span class="item card_value">{{$.Session.get 'sensortempsoil_t'}} </span> <span class="card_value_unit">°C</span> 
+                                </div>
+                        </div>
+                   <!--      <div class="description">
+                       <p>{{_ "soil_temp_accumulated"}}</p>
+                   
+                       <h2>{{soilTempValues}} <strong> °C</strong></h2>
+                   </div> -->
+                   
+           <!--    {{#if $.Session.equals 'tempdisplay' "24hdata"}}
+                 <div class="extra content">
+                     Comments {{#each sensortempcommments}}
+                     <strong><p>{{comment_soil_t}}</p></strong>
+                     <span>{{created_at}}</span> {{/each}}
+                 </div>
+                 {{/if}} -->
+               <!--      <div class="extra content">
+                <div class="ui two bottom attached basic buttons">
+                   <button class="ui button toggle_soilTempData1">interval 1h</button>
+                   <button class="ui active button toggle_soilTempData24">interval 24h</button>
+                   </div>
+               </div> -->
+                </div>
+            </div>
+            <div class="ui twelve wide column">
+                {{#if $.Session.equals 'tempdisplay' "1hdata"}} {{> c3 data=myChartDataTemp1h id="chart2"}} {{/if}} {{#if $.Session.equals 'tempdisplay' "24hdata" }} {{> c3 data=myChartDataTemp24h id="chart2"}} {{/if}}
+            </div>
+        </div>
+       {{/if}} {{else}} {{> spinner}} {{/if}}
+        <!-- End Senzor_2 -->
+        <!-- For Senzor_3 -->
+       {{#if Template.subscriptionsReady}}  {{#if $.Session.equals 'chartFor' "Senzor_3"}}
+ <h3 class="nodename">{{$.Session.get 'SenzorDescription'}} </h3>
+        <!-- Umiditate -->
+        <div class="row ui segment">
+       <div class="ui four wide column">
+                
+                <div id="card" class="ui fluid center aligned card">
+                    <div class="content">
+                        <div class="header card_title">
+                         <i class="wi  wi-humidity larger left floated wi-fw"></i>
+                            {{_ "soil_humid_header"}}
+                            <span class="centered floated"></span>
+                        </div>
+                       <!--  <div class="description">
+                           <p>{{_ "soil_humid_desc"}}</p>
+                       </div> -->
+                    </div>
+                    <div class="extra content">
+                        <div class="ui list">
+                            <div>
+                                <div><strong>  {{_ "h10"}}  </strong> </div>
+                                <div>
+                                <span class="item card_value">{{$.Session.get 'sensorw1'}} </span> <span class="card_value_unit">cb</span> 
+                                </div>
+                            </div>
+
+                            <div class="ui divider"></div>
+
+                            <div> <strong>{{_ "h30"}} </strong> </div>
+
+                            <div>
+                              <span class="item card_value">{{$.Session.get 'sensorw2'}} </span> <span class="card_value_unit">cb</span> 
+                            </div>
+
+                            <div class="ui divider"></div>
+
+                            <div> <strong>{{_ "h50"}} </strong> </div> 
+
+                            <div>
+                             <span class="item card_value">{{$.Session.get 'sensorw3'}} </span> <span class="card_value_unit">cb</span> 
+                            </div>
+                         
+                        </div>
+                    </div>
+                   <!--  <div class="extra content">
+                       <div class="ui two bottom attached basic buttons">
+                           <button class="ui button toggle_humidData1">interval 1h</button>
+                           <button class="ui active button toggle_humidData24">interval 24h</button>
+                       </div>
+                   </div> -->
+                </div>
+            </div>
+            <div class="ui twelve wide column">
+                {{#if $.Session.equals 'humiddisplay' "1hdata"}} {{> c3 data=myChartDataHumid1h id="chart1"}} {{/if}} {{#if $.Session.equals 'humiddisplay' "24hdata" }} {{> c3 data=myChartDataHumid24h id="chart1"}} {{/if}}
+            </div>
+        </div>
+        <!-- Temp sol -->
+        <div class="row ui segment">
+            <div class="ui four wide column">
+                <div id="card" class="ui fluid  center aligned card">
+                    <div class="content">
+                        <div class="header card_title">
+                        <i class="wi  wi-thermometer larger left floated wi-fw"></i>
+                            {{_ "soil_temp_header"}}
+                            <span class="centered floated"></span>
+                        </div>
+                    </div>
+                        <div class="extra content">
+                          <!--   <p>{{_ "soil_temp_desc"}}</p> -->
+                           <div> <strong>{{_ "temp10"}} </strong> </div>
+                            <div>
+                             <span class="item card_value">{{$.Session.get 'sensortempsoil_t'}} </span> <span class="card_value_unit">°C</span> 
+                                </div>
+                        </div>
+                   <!--      <div class="description">
+                       <p>{{_ "soil_temp_accumulated"}}</p>
+                   
+                       <h2>{{soilTempValues}} <strong> °C</strong></h2>
+                   </div> -->
+                   
+           <!--    {{#if $.Session.equals 'tempdisplay' "24hdata"}}
+                 <div class="extra content">
+                     Comments {{#each sensortempcommments}}
+                     <strong><p>{{comment_soil_t}}</p></strong>
+                     <span>{{created_at}}</span> {{/each}}
+                 </div>
+                 {{/if}} -->
+               <!--      <div class="extra content">
+                <div class="ui two bottom attached basic buttons">
+                   <button class="ui button toggle_soilTempData1">interval 1h</button>
+                   <button class="ui active button toggle_soilTempData24">interval 24h</button>
+                   </div>
+               </div> -->
+                </div>
+            </div>
+            <div class="ui twelve wide column">
+                {{#if $.Session.equals 'tempdisplay' "1hdata"}} {{> c3 data=myChartDataTemp1h id="chart2"}} {{/if}} {{#if $.Session.equals 'tempdisplay' "24hdata" }} {{> c3 data=myChartDataTemp24h id="chart2"}} {{/if}}
+            </div>
+        </div>
+       {{/if}} {{else}} {{> spinner}}  {{/if}}
+        <!-- For Senzor 4 -->
+         {{#if Template.subscriptionsReady}}  {{#if $.Session.equals 'chartFor' "Senzor_4"}}
+<h3 class="nodename">{{$.Session.get 'SenzorDescription'}} </h3>
+        <!-- Umiditate -->
+        <div class="row ui segment">
+       <div class="ui four wide column">
+                
+                <div id="card" class="ui fluid center aligned card">
+                    <div class="content">
+                        <div class="header card_title">
+                         <i class="wi  wi-humidity larger left floated wi-fw"></i>
+                            {{_ "soil_humid_header"}}
+                            <span class="centered floated"></span>
+                        </div>
+                       <!--  <div class="description">
+                           <p>{{_ "soil_humid_desc"}}</p>
+                       </div> -->
+                    </div>
+                    <div class="extra content">
+                        <div class="ui list">
+                            <div>
+                                <div><strong>  {{_ "h10"}}  </strong> </div>
+                                <div>
+                                <span class="item card_value">{{$.Session.get 'sensorw1'}} </span> <span class="card_value_unit">cb</span> 
+                                </div>
+                            </div>
+
+                            <div class="ui divider"></div>
+
+                            <div> <strong>{{_ "h30"}} </strong> </div>
+
+                            <div>
+                              <span class="item card_value">{{$.Session.get 'sensorw2'}} </span> <span class="card_value_unit">cb</span> 
+                            </div>
+
+                            <div class="ui divider"></div>
+
+                            <div> <strong>{{_ "h50"}} </strong> </div> 
+
+                            <div>
+                             <span class="item card_value">{{$.Session.get 'sensorw3'}} </span> <span class="card_value_unit">cb</span> 
+                            </div>
+                         
+                        </div>
+                    </div>
+                  <!--   <div class="extra content">
+                      <div class="ui two bottom attached basic buttons">
+                          <button class="ui button toggle_humidData1">interval 1h</button>
+                          <button class="ui active button toggle_humidData24">interval 24h</button>
+                      </div>
+                  </div> -->
+                </div>
+            </div>
+            <div class="ui twelve wide column">
+                {{#if $.Session.equals 'humiddisplay' "1hdata"}} {{> c3 data=myChartDataHumid1h id="chart1"}} {{/if}} {{#if $.Session.equals 'humiddisplay' "24hdata" }} {{> c3 data=myChartDataHumid24h id="chart1"}} {{/if}}
+            </div>
+        </div>
+        <!-- Temp sol -->
+        <div class="row ui segment">
+                <div class="ui four wide column">
+                <div id="card" class="ui fluid  center aligned card">
+                    <div class="content">
+                        <div class="header card_title">
+                        <i class="wi  wi-thermometer larger left floated wi-fw"></i>
+                            {{_ "soil_temp_header"}}
+                            <span class="centered floated"></span>
+                        </div>
+                    </div>
+                        <div class="extra content">
+                          <!--   <p>{{_ "soil_temp_desc"}}</p> -->
+                           <div> <strong>{{_ "temp10"}} </strong> </div>
+                            <div>
+                             <span class="item card_value">{{$.Session.get 'sensortempsoil_t'}} </span> <span class="card_value_unit">°C</span> 
+                                </div>
+                        </div>
+                   <!--      <div class="description">
+                       <p>{{_ "soil_temp_accumulated"}}</p>
+                   
+                       <h2>{{soilTempValues}} <strong> °C</strong></h2>
+                   </div> -->
+                   
+           <!--    {{#if $.Session.equals 'tempdisplay' "24hdata"}}
+                 <div class="extra content">
+                     Comments {{#each sensortempcommments}}
+                     <strong><p>{{comment_soil_t}}</p></strong>
+                     <span>{{created_at}}</span> {{/each}}
+                 </div>
+                 {{/if}} -->
+              <!--       <div class="extra content">
+               <div class="ui two bottom attached basic buttons">
+                  <button class="ui button toggle_soilTempData1">interval 1h</button>
+                  <button class="ui active button toggle_soilTempData24">interval 24h</button>
+                  </div>
+              </div> -->
+                </div>
+            </div>
+            <div class="ui twelve wide column">
+                {{#if $.Session.equals 'tempdisplay' "1hdata"}} {{> c3 data=myChartDataTemp1h id="chart2"}} {{/if}} {{#if $.Session.equals 'tempdisplay' "24hdata" }} {{> c3 data=myChartDataTemp24h id="chart2"}} {{/if}}
+            </div>
+        </div>
+        <!-- temp aer -->
+        <div class="row ui segment">
+     <div class="ui four wide column">
+                <div id="card" class="ui  fluid center aligned card">
+                    <div class="content">
+                        <div class="header card_title">
+                        <i class="wi  wi-thermometer-exterior larger left floated wi-fw"></i>
+                            {{_ "air_temp_header"}}
+                            <span class="centered floated"></span>
+                        </div>
+                      <!--   <div class="description">
+                          <p>{{_ "air_temp_desc"}}</p>
+                      </div> -->
+                    </div>
+                    <div class="extra content">
+                                     <div>
+                             <span class="item card_value">{{$.Session.get 'sensorair_temp'}} </span> <span class="card_value_unit">°C</span> 
+                       </div>
+                    </div>
+
+                   <!--  <div class="extra content">
+                   <div class="ui two bottom attached basic buttons">
+                       <button class="ui button toggle_airTempData1" type="submit">interval 1h</button>
+                       <button class="ui active button toggle_airTempData24" type="submit">interval 24h</button>
+                       </div>
+                   </div> -->
+                </div>
+            </div>
+            <div class="ui twelve wide column">
+                <div>
+                    {{#if $.Session.equals 'airTempDisplay' "1hdata"}} {{> c3 data=myChartDataAirTemp1h id="chart3"}} {{/if}} {{#if $.Session.equals 'airTempDisplay' "24hdata" }} {{> c3 data=myChartDataAirTemp24h id="chart3"}} {{/if}}
+                </div>
+            </div>
+        </div>
+        <!-- pres atmosferica -->
+        <div class="row ui segment">
+            <div class="ui four wide column">
+                <div id="card" class="ui  fluid  card">
+                    <div class="content">
+                        <div class="header card_title">
+                        <i class="wi  wi-barometer larger left floated wi-fw"></i>
+                            {{_ "air_press_header"}}
+                        </div>
+                      <!--   <div class="description">
+                          <p>{{_ "air_press_desc"}}</p>
+                      </div> -->
+                    </div>
+                     <div class="extra content">
+                        <div class="ui list">
+                           
+                            <div>
+                            <span class="item card_value">{{$.Session.get 'sensorair_pressure_mmhg'}} </span><span class="card_value_unit">mmHg</span>
+                            </div>
+                            <div>
+                            <span class="item card_value">{{$.Session.get 'sensorair_pressure_hPa'}}</span><span class="card_value_unit">hPa</span> 
+                            </div>
+                        </div>
+
+                    </div>
+                 <!--    <div class="extra content">
+                 <div class="ui two bottom attached basic buttons">
+                     <button class="ui button toggle_airPressData1" type="submit">interval 1h</button>
+                     <button class="ui active button toggle_airPressData24" type="submit">interval 24h</button>
+                     </div>
+                 </div> -->
+                </div>
+            </div>
+            <div class="ui twelve wide column">
+                <div>
+                    {{#if $.Session.equals 'airPressDisplay' "1hdata"}} {{> c3 data=myChartDataAirPress1h id="chart4"}} {{/if}} {{#if $.Session.equals 'airPressDisplay' "24hdata" }} {{> c3 data=myChartDataAirPress24h id="chart4"}} {{/if}}
+                </div>
+            </div>
+        </div>
+        <!-- umiditate atmosferica -->
+        <div class="row ui segment">
+            <div class="ui four wide column">
+                <div id="card" class="ui fluid   card">
+                    <div class="content">
+                        <div class="header card_title">
+                        <i class="wi  wi-humidity larger left floated wi-fw"></i>
+                            {{_ "air_humid_header"}}
+                            <span class="centered floated"></span>
+                        </div>
+                     <!--  <div class="description">
+                         <p>{{_ "air_humid_desc"}}</p>
+                     </div> -->
+                    </div>
+                   <div class="extra content">
+                        <div>
+                            
+                            <span class="item card_value">{{$.Session.get 'sensorair_humid'}} </span><span class="card_value_unit">%</span>
+                        </div>
+                    </div>
+               <!--      <div class="extra content">
+               <div class="ui two bottom attached basic buttons">
+                   <button class="ui button toggle_airHumidData1" type="submit">interval 1h</button>
+                   <button class="ui active button toggle_airHumidData24" type="submit">interval 24h</button>
+                   </div>
+               </div> -->
+                </div>
+            </div>
+            <div class="ui twelve wide column">
+                <div>
+                    {{#if $.Session.equals 'airHumidDisplay' "1hdata"}} {{> c3 data=myChartDataAirHumid1h id="chart5"}} {{/if}} {{#if $.Session.equals 'airHumidDisplay' "24hdata" }} {{> c3 data=myChartDataAirHumid24h id="chart5"}} {{/if}} </div>
+            </div>
+        </div>
+        <!--precipitatii atmosferice-->
+       <div class="row ui segment">
+            <div class="ui four wide column">
+                <div id="card" class="ui card">
+                   
+
+                        {{#if $.Session.equals 'precipdisplay' "1hdata"}} 
+                            <div class="content">
+                                <div class="header card_title">
+                                <i class="wi  wi-raindrops larger left floated wi-fw"></i>
+                                    {{_ "pluv2_header"}}
+                                    <span class="centered floated"></span>
+                                </div>
+                              <!--   <div class="description">
+                                  <p>{{_ "pluv2_desc"}}</p>
+                              </div> -->
+                            </div>
+                            <div class="extra content">
+                            
+                                <span class="item card_value">{{$.Session.get 'sensormeteo_pluv2'}}</span><span class="card_value_unit">mm</span>
+                            </div>         
+                         {{/if}} 
+                         {{#if $.Session.equals 'precipdisplay' "24hdata" }}
+                              <div class="content">
+                                    <div class="header card_title">
+                                    <i class="wi  wi-raindrops larger left floated wi-fw"></i>
+                                        {{_ "pluv3_header"}}
+                                        <span class="centered floated"></span>
+                                    </div>
+                                <!--     <div class="description">
+                                    <p>{{_ "pluv3_desc"}}</p>
+                                </div> -->
+                                </div>
+                               <div class="extra content">
+                            
+                                 <span class="item card_value">{{$.Session.get 'sensormeteo_pluv3'}}</span><span class="card_value_unit">mm</span>
+                                </div>  
+
+                         {{/if}}
+                        
+                   
+                <div class="extra content">
+               <div class="ui two bottom attached basic buttons">
+                   <button class="ui active button toggle_precipData1" type="submit">interval 1h</button>
+                   <button class="ui  button toggle_precipData24" type="submit">interval 24h</button>
+                   </div>
+               </div> 
+                </div>
+            </div>
+            <div class="ui twelve wide column">
+                {{#if $.Session.equals 'precipdisplay' "1hdata"}} {{> c3 data=myChartDataRain1h id="chart6"}} {{/if}} {{#if $.Session.equals 'precipdisplay' "24hdata" }} {{> c3 data=myChartDataRain24h id="chart6"}} {{/if}}
+            </div>
+        </div>
+            <!-- wind data-->
+
+        <div class="row ui segment">
+            <div class="ui eight wide column">
+                <div id="card" class="ui fluid card">
+                    <div class="content">
+                        <div class="header card_title">
+                        <i class="wi  wi-direction-down-left larger left floated wi-fw"></i>
+                            {{_ "vane_header"}}
+                        </div>
+                       <!--  <div class="description">
+                           <p>{{_ "vane_description"}}</p>
+                       </div> -->
+                    </div>
+                    <div class="extra content">
+                        
+                            {{#each sensor_meteo_vane}}
+                            <span class="item card_value">{{this}}</span> {{/each}}
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="ui eight wide column">
+                <div id="card" class="ui  fluid  card">
+                    <div class="content">
+                        <div class="header card_title">
+                        <i class="wi  wi-strong-wind larger left floated wi-fw"></i> 
+                            {{_ "ane_header"}}
+                            <span class="centered floated"></span>
+                        </div>
+                      <!--   <div class="description">
+                          <p>{{_ "ane_description"}}</p>
+                      </div> -->
+                    </div>
+                    <div class="extra content">
+                      
+                        {{#each sensor_meteo_ane}}
+                        <span class="item card_value">{{this}}</span> <span class="card_value_unit">  km/h</span> {{/each}} <span class="item card_value"><strong>/</strong></span>  {{#each sensor_meteo_ane_ms}}
+                         <span class="item card_value">{{this}}</span> <span class="card_value_unit"> m/s</span>{{/each}}
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+       {{/if}} {{else}} {{> spinner}}  {{/if}}
+        <!-- End Senzor_4 -->
+        <!-- Senzor_5 -->
+        {{#if Template.subscriptionsReady}}  {{#if $.Session.equals 'chartFor' "Senzor_5"}}
+<h3 class="nodename">{{$.Session.get 'SenzorDescription'}} </h3>
+        <div class="row ui segment">
+      <div class="ui four wide column">
+                
+                <div id="card" class="ui fluid center aligned card">
+                    <div class="content">
+                        <div class="header card_title">
+                         <i class="wi  wi-humidity larger left floated wi-fw"></i>
+                            {{_ "soil_humid_header"}}
+                            <span class="centered floated"></span>
+                        </div>
+                       <!--  <div class="description">
+                           <p>{{_ "soil_humid_desc"}}</p>
+                       </div> -->
+                    </div>
+                    <div class="extra content">
+                        <div class="ui list">
+                            <div>
+                                <div><strong>  {{_ "h10"}}  </strong> </div>
+                                <div>
+                                <span class="item card_value">{{$.Session.get 'sensorw1'}} </span> <span class="card_value_unit">cb</span> 
+                                </div>
+                            </div>
+
+                            <div class="ui divider"></div>
+
+                            <div> <strong>{{_ "h30"}} </strong> </div>
+
+                            <div>
+                              <span class="item card_value">{{$.Session.get 'sensorw2'}} </span> <span class="card_value_unit">cb</span> 
+                            </div>
+
+                            <div class="ui divider"></div>
+
+                            <div> <strong>{{_ "h50"}} </strong> </div> 
+
+                            <div>
+                             <span class="item card_value">{{$.Session.get 'sensorw3'}} </span> <span class="card_value_unit">cb</span> 
+                            </div>
+                         
+                        </div>
+                    </div>
+                <!--     <div class="extra content">
+                    <div class="ui two bottom attached basic buttons">
+                        <button class="ui button toggle_humidData1">interval 1h</button>
+                        <button class="ui active button toggle_humidData24">interval 24h</button>
+                    </div>
+                </div> -->
+                </div>
+            </div>
+            <div class="ui twelve wide column">
+                {{#if $.Session.equals 'humiddisplay' "1hdata"}} {{> c3 data=myChartDataHumid1h id="chart1"}} {{/if}} {{#if $.Session.equals 'humiddisplay' "24hdata" }} {{> c3 data=myChartDataHumid24h id="chart1"}} {{/if}}
+            </div>
+        </div>
+        <div class="row ui segment">
+            <div class="ui four wide column">
+                <div id="card" class="ui fluid  center aligned card">
+                    <div class="content">
+                        <div class="header card_title">
+                        <i class="wi  wi-thermometer larger left floated wi-fw"></i>
+                            {{_ "soil_temp_header"}}
+                            <span class="centered floated"></span>
+                        </div>
+                    </div>
+                        <div class="extra content">
+                          <!--   <p>{{_ "soil_temp_desc"}}</p> -->
+                           <div> <strong>{{_ "temp10"}} </strong> </div>
+                            <div>
+                             <span class="item card_value">{{$.Session.get 'sensortempsoil_t'}} </span> <span class="card_value_unit">°C</span> 
+                                </div>
+                        </div>
+                   <!--      <div class="description">
+                       <p>{{_ "soil_temp_accumulated"}}</p>
+                   
+                       <h2>{{soilTempValues}} <strong> °C</strong></h2>
+                   </div> -->
+                   
+           <!--    {{#if $.Session.equals 'tempdisplay' "24hdata"}}
+                 <div class="extra content">
+                     Comments {{#each sensortempcommments}}
+                     <strong><p>{{comment_soil_t}}</p></strong>
+                     <span>{{created_at}}</span> {{/each}}
+                 </div>
+                 {{/if}} -->
+              <!--       <div class="extra content">
+               <div class="ui two bottom attached basic buttons">
+                  <button class="ui button toggle_soilTempData1">interval 1h</button>
+                  <button class="ui active button toggle_soilTempData24">interval 24h</button>
+                  </div>
+              </div> -->
+                </div>
+            </div>
+            <div class="ui twelve wide column">
+                {{#if $.Session.equals 'tempdisplay' "1hdata"}} {{> c3 data=myChartDataTemp1h id="chart2"}} {{/if}} {{#if $.Session.equals 'tempdisplay' "24hdata" }} {{> c3 data=myChartDataTemp24h id="chart2"}} {{/if}}
+            </div>
+        </div>
+        <!-- temperatura atmosferica -->
+         <!-- temp aer -->
+        <div class="row ui segment">
+     <div class="ui four wide column">
+                <div id="card" class="ui  fluid center aligned card">
+                    <div class="content">
+                        <div class="header card_title">
+                        <i class="wi  wi-thermometer-exterior larger left floated wi-fw"></i>
+                            {{_ "air_temp_header"}}
+                            <span class="centered floated"></span>
+                        </div>
+                      <!--   <div class="description">
+                          <p>{{_ "air_temp_desc"}}</p>
+                      </div> -->
+                    </div>
+                    <div class="extra content">
+                                     <div>
+                             <span class="item card_value">{{$.Session.get 'sensorair_temp'}} </span> <span class="card_value_unit">°C</span> 
+                       </div>
+                    </div>
+
+              <!--       <div class="extra content">
+              <div class="ui two bottom attached basic buttons">
+                  <button class="ui button toggle_airTempData1" type="submit">interval 1h</button>
+                  <button class="ui active button toggle_airTempData24" type="submit">interval 24h</button>
+                  </div>
+              </div> -->
+                </div>
+            </div>
+            <div class="ui twelve wide column">
+                <div>
+                    {{#if $.Session.equals 'airTempDisplay' "1hdata"}} {{> c3 data=myChartDataAirTemp1h id="chart3"}} {{/if}} {{#if $.Session.equals 'airTempDisplay' "24hdata" }} {{> c3 data=myChartDataAirTemp24h id="chart3"}} {{/if}}
+                </div>
+            </div>
+        </div>
+        <!-- presiune atmosferica -->
+       <div class="row ui segment">
+            <div class="ui four wide column">
+                <div id="card" class="ui  fluid  card">
+                    <div class="content">
+                        <div class="header card_title">
+                        <i class="wi  wi-barometer larger left floated wi-fw"></i>
+                            {{_ "air_press_header"}}
+                        </div>
+                      <!--   <div class="description">
+                          <p>{{_ "air_press_desc"}}</p>
+                      </div> -->
+                    </div>
+                     <div class="extra content">
+                        <div class="ui list">
+                           
+                            <div>
+                            <span class="item card_value">{{$.Session.get 'sensorair_pressure_mmhg'}} </span><span class="card_value_unit">mmHg</span>
+                            </div>
+                            <div>
+                            <span class="item card_value">{{$.Session.get 'sensorair_pressure_hPa'}}</span><span class="card_value_unit">hPa</span> 
+                            </div>
+                        </div>
+
+                    </div>
+                <!--     <div class="extra content">
+                <div class="ui two bottom attached basic buttons">
+                    <button class="ui button toggle_airPressData1" type="submit">interval 1h</button>
+                    <button class="ui active button toggle_airPressData24" type="submit">interval 24h</button>
+                    </div>
+                </div> -->
+                </div>
+            </div>
+            <div class="ui twelve wide column">
+                <div>
+                    {{#if $.Session.equals 'airPressDisplay' "1hdata"}} {{> c3 data=myChartDataAirPress1h id="chart4"}} {{/if}} {{#if $.Session.equals 'airPressDisplay' "24hdata" }} {{> c3 data=myChartDataAirPress24h id="chart4"}} {{/if}}
+                </div>
+            </div>
+        </div>
+        <!-- umiditate atmosferica -->
+            <div class="row ui segment">
+            <div class="ui four wide column">
+                <div id="card" class="ui fluid   card">
+                    <div class="content">
+                        <div class="header card_title">
+                        <i class="wi  wi-humidity larger left floated wi-fw"></i>
+                            {{_ "air_humid_header"}}
+                            <span class="centered floated"></span>
+                        </div>
+                     <!--  <div class="description">
+                         <p>{{_ "air_humid_desc"}}</p>
+                     </div> -->
+                    </div>
+                   <div class="extra content">
+                        <div>
+                            
+                            <span class="item card_value">{{$.Session.get 'sensorair_humid'}} </span><span class="card_value_unit">%</span>
+                        </div>
+                    </div>
+                <!--     <div class="extra content">
+                <div class="ui two bottom attached basic buttons">
+                    <button class="ui button toggle_airHumidData1" type="submit">interval 1h</button>
+                    <button class="ui active button toggle_airHumidData24" type="submit">interval 24h</button>
+                    </div>
+                </div> -->
+                </div>
+            </div>
+            <div class="ui twelve wide column">
+                <div>
+                    {{#if $.Session.equals 'airHumidDisplay' "1hdata"}} {{> c3 data=myChartDataAirHumid1h id="chart5"}} {{/if}} {{#if $.Session.equals 'airHumidDisplay' "24hdata" }} {{> c3 data=myChartDataAirHumid24h id="chart5"}} {{/if}} </div>
+            </div>
+        </div>
+        <!-- precipitatii atmosferice -->
+         <div class="row ui segment">
+            <div class="ui four wide column">
+                <div id="card" class="ui card">
+                   
+
+                        {{#if $.Session.equals 'precipdisplay' "1hdata"}} 
+                            <div class="content">
+                                <div class="header card_title">
+                                <i class="wi  wi-raindrops larger left floated wi-fw"></i>
+                                    {{_ "pluv2_header"}}
+                                    <span class="centered floated"></span>
+                                </div>
+                              <!--   <div class="description">
+                                  <p>{{_ "pluv2_desc"}}</p>
+                              </div> -->
+                            </div>
+                            <div class="extra content">
+                            
+                                <span class="item card_value">{{$.Session.get 'sensormeteo_pluv2'}}</span><span class="card_value_unit">mm</span>
+                            </div>         
+                         {{/if}} 
+                         {{#if $.Session.equals 'precipdisplay' "24hdata" }}
+                              <div class="content">
+                                    <div class="header card_title">
+                                    <i class="wi  wi-raindrops larger left floated wi-fw"></i>
+                                        {{_ "pluv3_header"}}
+                                        <span class="centered floated"></span>
+                                    </div>
+                                <!--     <div class="description">
+                                    <p>{{_ "pluv3_desc"}}</p>
+                                </div> -->
+                                </div>
+                               <div class="extra content">
+                            
+                                 <span class="item card_value">{{$.Session.get 'sensormeteo_pluv3'}}</span><span class="card_value_unit">mm</span>
+                                </div>  
+
+                         {{/if}}
+                        
+                   
+                <div class="extra content">
+              <div class="ui two bottom attached basic buttons">
+                  <button class="ui active button toggle_precipData1" type="submit">interval 1h</button>
+                  <button class="ui  button toggle_precipData24" type="submit">interval 24h</button>
+                  </div>
+              </div>
+                </div>
+            </div>
+            <div class="ui twelve wide column">
+                {{#if $.Session.equals 'precipdisplay' "1hdata"}} {{> c3 data=myChartDataRain1h id="chart6"}} {{/if}} {{#if $.Session.equals 'precipdisplay' "24hdata" }} {{> c3 data=myChartDataRain24h id="chart6"}} {{/if}}
+            </div>
+        </div>
+
+        <!--wind data-->
+        <div class="row ui segment">
+            <div class="ui eight wide column">
+                <div id="card" class="ui fluid card">
+                    <div class="content">
+                        <div class="header card_title">
+                        <i class="wi  wi-direction-down-left larger left floated wi-fw"></i>
+                            {{_ "vane_header"}}
+                        </div>
+                       <!--  <div class="description">
+                           <p>{{_ "vane_description"}}</p>
+                       </div> -->
+                    </div>
+                    <div class="extra content">
+                        
+                            {{#each sensor_meteo_vane}}
+                            <span class="item card_value">{{this}}</span> {{/each}}
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="ui eight wide column">
+                <div id="card" class="ui  fluid  card">
+                    <div class="content">
+                        <div class="header card_title">
+                        <i class="wi  wi-strong-wind larger left floated wi-fw"></i> 
+                            {{_ "ane_header"}}
+                            <span class="centered floated"></span>
+                        </div>
+                      <!--   <div class="description">
+                          <p>{{_ "ane_description"}}</p>
+                      </div> -->
+                    </div>
+                    <div class="extra content">
+                    
+                        {{#each sensor_meteo_ane}}
+                        <span class="item card_value">{{this}}</span> <span class="card_value_unit">  km/h</span> {{/each}}  <span class="item card_value"><strong>/</strong></span> {{#each sensor_meteo_ane_ms}}
+                         <span class="item card_value">{{this}}</span> <span class="card_value_unit"> m/s</span>{{/each}}
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+       {{/if}} {{else}} {{> spinner}}  {{/if}}
+        <!-- End Senzor_5 -->
+    </div>
+    <!-- grid -->
+    <div id="comment_modal" class="ui modal">
+        <form class="ui small form segment new_comment">
+            <div>{{_ "new_comment"}} </div>
+            <input type="text" name="text" placeholder="{{_ " new_comment "}}" />
+            <button class="ui button at-btn" type="submit">{{_ "update_desc"}}</button>
+        </form>
+    </div>
+</template>

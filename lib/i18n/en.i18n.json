@@ -15,7 +15,7 @@
 "mainboard":"Mainboard",
 "hist":"Historic data",
 "admin":"Administration",
-"sensors":"Sensors",
+"sensors":"Sensors data",
 "logout":"Logout",
 "hello":"Hello ",
 "login":"Login",
@@ -52,15 +52,16 @@ Waspmote Plug & Sense! Smart Agriculture are installed outdoors. One, with the a
 "h30":"Humidity 30cm",
 "h50":"Humidity 50cm",
 "mainboard_title":"Latest information",
-"mainboard_info":"Recomandations & Alerts",
+"mainboard_info":"Recomandations & Notes",
 "no_alert": "There are no alerts" ,
 "no_reco":"There are no recommandations at the moment",
-"dummy_alert1": "Sowing corn in the field" ,
+"dummy_alert1": "Sowing corn 15/04/2017" ,
 "dummy_alert2":"Corn emerging from the ground 01/05/2017",
 "new_comment":"Add/Update comment",
 "soil_temp_accumulated":"Accumulated mean soil temperature",
 "temp10":"Depth 10cm",
 "fisa_tehno":"Techological doc",
-"details":"Details"
+"details":"Details",
+"stats":"Statistics"
 
 }

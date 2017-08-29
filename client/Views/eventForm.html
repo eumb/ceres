@@ -1,0 +1,13 @@
+<template name="eventForm">
+	<div >
+ {{#autoForm collection=workSchema  id="insertEventsForm" type="insert"}}
+      <fieldset>
+{{> afQuickField name="user" readonly=true value=currentUser class=""}}  
+      {{> afQuickField name="operation" class=""}}
+      {{> afQuickField name='obs' class=""}}
+  {{> afQuickField name='created_at' type="date" class=""}} 
+       </fieldset>
+      <button type="submit" class="ui submit button">Submit</button>
+  {{/autoForm}}
+  	</div>
+</template>

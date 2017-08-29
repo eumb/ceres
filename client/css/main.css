@@ -216,11 +216,7 @@ width: 0!important;
 	margin-right:0em;
 	margin-bottom: 0em;
 }
-#card{
 
-	//margin-top: 10%;
-	
-}
 .card_title_mainboard{
 	color: #263959!important;
 	font-size: 1rem!important;
@@ -255,6 +251,11 @@ width: 0!important;
   flex-basis: 0;
   height: 100%;
 }
+
+.ui.card{
+box-shadow: 2px 4px 12px 2px #d4d4d5, 0px 0px 0px 1px #ffffff!important;
+}
+
 
 #logForm{
 
@@ -397,8 +398,9 @@ width: 0!important;
   fill: #ff0000;
   fill-opacity:1!important;
 }
-
-
+.c3-axis-x .tick line {
+      display: none;
+}
 
 .graphic {
   background-color: #FFFFF4;
@@ -412,6 +414,7 @@ width: 0!important;
 .ui.grid > .row.graphic{
 	  display: inline-block!important;
 }
+
 
 #chartdiv {
   width   : 100%;
@@ -436,6 +439,7 @@ width: 0!important;
 
 .nodename {
 	color: #73879C;
+	font-weight: bolder;
 }
 .card_value{
 	color: #73879C;
@@ -449,3 +453,31 @@ width: 0!important;
   font-weight: bold;
   line-height: 1.65857; 
 }
+
+.details{
+	color: black;
+}
+.saturated{
+	background: lightgray!important;
+}
+.regionYok{
+	background: lightgreen!important;
+}
+.regionYalmostok{
+	background: lightblue!important;
+}
+.regionYnok{
+	background: lightyellow!important;
+}
+.regionYbad{
+	background: red!important;
+}
+a:active {
+    color: black!important;
+}
+a:hover {
+    color: black!important;
+}
+/* .ui.segment{
+	border: 0px solid rgba(34, 36, 38, 0.15)!important;
+} */

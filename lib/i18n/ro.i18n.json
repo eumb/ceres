@@ -14,7 +14,7 @@
 "mainboard":"Acasa",
 "hist":"Istoric date",
 "admin":"Administrare",
-"sensors":"Senzori",
+"sensors":"Date senzori",
 "logout":"Iesire",
 "hello":"Salut ",
 "login":"Conectare",
@@ -50,14 +50,17 @@ Waspmote Plug & Sense! Smart Agriculture instalate in exterior colecteaza date s
 "air_humid_desc":"Valoarea actuala a umiditatii aerului in %",
 "soil_temp_header":"Temperatura solului",
 "soil_temp_desc":"Ultima valoare inregistrata a temperaturii solului",
-"soil_humid_header":"Tensiunea apei solului",
+"soil_humid_header":"Umiditate sol",
 "soil_humid_desc":"Ultimele valori ale tensiunii apei solului",
 "h10":"Adancime 10cm",
 "h30":"Adancime 30cm",
 "h50":"Adancime 50cm",
+"h10main":"Umiditate 10cm",
+"h30main":"Umiditate 30cm",
+"h50main":"Umiditate 50cm",
 "mainboard_title":"Ultimele informatii",
-"mainboard_info":"Recomandari si alerte",
-"dummy_alert1": "Semanat porumb in camp",
+"mainboard_info":"Recomandari si notificari",
+"dummy_alert1": "Porumb semanat 15/04/2017",
 "dummy_alert2":"Porumb rasarit 01/05/2017",
 "no_alert":"Nu exista alerte disponibile",
 "no_reco":"Nici o recomandare",
@@ -65,6 +68,7 @@ Waspmote Plug & Sense! Smart Agriculture instalate in exterior colecteaza date s
 "soil_temp_accumulated":"Temperatura solului acumulata",
 "temp10":"Adancime 10cm",
 "fisa_tehno":"Fisa tehnologica",
-"details":"Detalii"
+"details":"Detalii",
+"stats":"Statistici"
 }
  

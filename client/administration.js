@@ -64,10 +64,10 @@ Template.administration.onCreated(function() {
         nodename: "Senzor_4",
         lat: { $exists: true }
       });
-      var locationS5 = SensorTelemetry.findOne({
+    /*  var locationS5 = SensorTelemetry.findOne({
         nodename: "Senzor_5",
         lat: { $exists: true }
-      });
+      });*/
       //console.log("Getting telemerty long/lat");
 
       /*     var latS1 = locationS1.lat;
@@ -78,8 +78,8 @@ Template.administration.onCreated(function() {
         var longS3= locationS3.long;*/
       var latS4 = locationS4.lat;
       var longS4 = locationS4.long;
-      var latS5 = locationS5.lat;
-      var longS5 = locationS5.long;
+     /* var latS5 = locationS5.lat;
+      var longS5 = locationS5.long;*/
 
       //console.log ("latS5 "+latS5);
       //console.log ("longS5 "+longS5);
@@ -104,11 +104,11 @@ Template.administration.onCreated(function() {
         title: "Senzor_4",
         map: map.instance
       });
-      var marker5 = new google.maps.Marker({
+      /*var marker5 = new google.maps.Marker({
         position: new google.maps.LatLng(latS5, longS5),
         title: "Senzor_5",
         map: map.instance
-      });
+      });*/
     });
   });
 });

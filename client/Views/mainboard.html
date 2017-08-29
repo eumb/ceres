@@ -1,4 +1,5 @@
 <template name="mainboard">
+
     <div class="ui stackable grid fluid ">
         
        
@@ -8,7 +9,7 @@
 
 
         <div class="ui row">
-            <div class="ui eight wide fluid column">
+            <div class="ui ten wide fluid column">
                     
                 <div class="ui stackable centered grid fluid raised segment ">
                     
@@ -48,6 +49,7 @@
                 
                 
                     <div class=" ui row ">
+                   
                         <h1>{{_ "mainboard_title"}}</h1>
                     </div>
                     
@@ -65,7 +67,7 @@
                 
                   
                     
-                    <div class="ui five item tabular menu">
+                    <div class={{tab_menu}}>
                       
                         
                            {{#each sensorsname}}
@@ -85,22 +87,25 @@
                             <div id="card" class="ui fluid card">
                                 <div class="content">
                                     <div class="header left floated card_title_mainboard">
-                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h10"}}
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h10main"}}
                                     </div>
                                 </div>
-                                <div class="extra center aligned content">
+                              
+                                <div class={{colorw1}}>
+                                    
                                     <h1>{{$.Session.get 'sensorw1'}} cb</h1>
                                 </div>
+                               
                             </div>
                         </div>
                         <div class="ui five wide column">
                             <div id="card" class="ui  fluid  card">
                                 <div class="content">
                                     <div class="header  left floated card_title_mainboard">
-                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h30"}}
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h30main"}}
                                     </div>
                                 </div>
-                                <div class="extra center aligned content">
+                                <div class={{colorw2}}>
                                     <h1>{{$.Session.get 'sensorw2'}} cb</h1>
                                 </div>
                             </div>
@@ -110,19 +115,19 @@
                             <div id="card" class="ui  fluid  card">
                                 <div class="content">
                                     <div class="header  left floated card_title_mainboard">
-                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h50"}}
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h50main"}}
                                     </div>
                                 </div>
-                                <div class="extra center aligned content">
+                                <div class={{colorw3}}>
                                     <h1>{{$.Session.get 'sensorw3'}} cb</h1>
                                 </div>
                             </div>
                         </div>
                      </div>
-                     <div class="row">
-                        <div class="ui divider"></div>
-                        <button class="ui black basic button"><a href="/dashboard" data-nodename={{nodename}}>{{_ "details"}}</a></button>
-                    </div>
+               <div class="row">
+                  <div class="ui divider"></div>
+                <!--   <button class="ui black basic button"><a class="details" href="/dash" data-nodename={{nodename}}>{{_ "details"}}</a></button> -->
+                                   </div> 
                    
                     {{/if}}
                     {{#if $.Session.equals 'senzor' "Senzor_2" }}
@@ -132,10 +137,10 @@
                             <div id="card" class="ui fluid card">
                                 <div class="content">
                                     <div class="header left floated card_title_mainboard">
-                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h10"}}
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h10main"}}
                                     </div>
                                 </div>
-                                <div class="extra center aligned content">
+                                <div class={{colorw1}}>
                                     <h1>{{$.Session.get 'sensorw1'}} cb</h1>
                                 </div>
                             </div>
@@ -144,10 +149,10 @@
                             <div id="card" class="ui  fluid  card">
                                 <div class="content">
                                     <div class="header  left floated card_title_mainboard">
-                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h30"}}
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h30main"}}
                                     </div>
                                 </div>
-                                <div class="extra center aligned content">
+                                <div class={{colorw2}}>
                                     <h1>{{$.Session.get 'sensorw2'}} cb</h1>
                                 </div>
                             </div>
@@ -157,19 +162,19 @@
                             <div id="card" class="ui  fluid  card">
                                 <div class="content">
                                     <div class="header  left floated card_title_mainboard">
-                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h50"}}
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h50main"}}
                                     </div>
                                 </div>
-                                <div class="extra center aligned content">
+                                <div class={{colorw3}}>
                                     <h1>{{$.Session.get 'sensorw3'}} cb</h1>
                                 </div>
                             </div>
                         </div>
                     </div>
-                        <div class="row">
-                        <div class="ui divider"></div>
-                        <button class="ui black basic button"><a href="/dashboard" data-nodename={{nodename}}>{{_ "details"}}</a></button>
-                    </div>
+              <div class="row">
+              <div class="ui divider"></div>
+           <!--    <button class="ui black basic button"><a class="details" href="/dash" data-nodename={{nodename}}>{{_ "details"}}</a></button> -->
+                                  </div>
                    
                     {{/if}}
                      {{#if $.Session.equals 'senzor' "Senzor_3" }}
@@ -179,10 +184,10 @@
                             <div id="card" class="ui fluid card">
                                 <div class="content">
                                     <div class="header left floated card_title_mainboard">
-                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h10"}}
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h10main"}}
                                     </div>
                                 </div>
-                                <div class="extra center aligned content">
+                                <div class={{colorw1}}>
                                     <h1>{{$.Session.get 'sensorw1'}} cb</h1>
                                 </div>
                             </div>
@@ -191,10 +196,10 @@
                             <div id="card" class="ui  fluid  card">
                                 <div class="content">
                                     <div class="header  left floated card_title_mainboard">
-                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h30"}}
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h30main"}}
                                     </div>
                                 </div>
-                                <div class="extra center aligned content">
+                                <div class={{colorw2}}>
                                     <h1>{{$.Session.get 'sensorw2'}} cb</h1>
                                 </div>
                             </div>
@@ -204,19 +209,19 @@
                             <div id="card" class="ui  fluid  card">
                                 <div class="content">
                                     <div class="header  left floated card_title_mainboard">
-                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h50"}}
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h50main"}}
                                     </div>
                                 </div>
-                                <div class="extra center aligned content">
+                                <div class={{colorw3}}>
                                     <h1>{{$.Session.get 'sensorw3'}} cb</h1>
                                 </div>
                             </div>
                         </div>
                     </div>
-                        <div class="row">
-                        <div class="ui divider"></div>
-                        <button class="ui black basic button"><a href="/dashboard" data-nodename={{nodename}}>{{_ "details"}}</a></button>
-                    </div>
+                 <div class="row">
+                 <div class="ui divider"></div>
+                <!--  <button class="ui black basic button"><a class="details" href="/dash" data-nodename={{nodename}}>{{_ "details"}}</a></button> -->
+                                     </div>
                    
                     {{/if}}
                     {{#if $.Session.equals 'senzor' "Senzor_4" }}
@@ -226,10 +231,10 @@
                             <div id="card" class="ui fluid card">
                                 <div class="content">
                                     <div class="header left floated card_title_mainboard">
-                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h10"}}
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h10main"}}
                                     </div>
                                 </div>
-                                <div class="extra center aligned content">
+                                <div class={{colorw1}}>
                                     <h1>{{$.Session.get 'sensorw1'}} cb</h1>
                                 </div>
                             </div>
@@ -238,10 +243,10 @@
                             <div id="card" class="ui  fluid  card">
                                 <div class="content">
                                     <div class="header  left floated card_title_mainboard">
-                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h30"}}
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h30main"}}
                                     </div>
                                 </div>
-                                <div class="extra center aligned content">
+                                <div class={{colorw2}}>
                                     <h1>{{$.Session.get 'sensorw2'}} cb</h1>
                                 </div>
                             </div>
@@ -251,10 +256,10 @@
                             <div id="card" class="ui  fluid  card">
                                 <div class="content">
                                     <div class="header  left floated card_title_mainboard">
-                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h50"}}
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h50main"}}
                                     </div>
                                 </div>
-                                <div class="extra center aligned content">
+                                <div class={{colorw3}}>
                                     <h1>{{$.Session.get 'sensorw3'}} cb</h1>
                                 </div>
                             </div>
@@ -281,7 +286,7 @@
                                         <i class="wi  wi-thermometer-exterior larger_mainboard left floated wi-fw"></i> {{_ "air_temp_header"}}
                                     </div>
                                 </div>
-                                <div class="extra center aligned content">
+                                <div class={{colorsensorair_temp}}>
                                     <h1>{{$.Session.get 'sensorair_temp'}} <strong>°C</strong> </h1>
                                 </div>
                             </div>
@@ -341,10 +346,10 @@
                             </div>
                         </div>
                     </div>
-                        <div class="row">
-                        <div class="ui divider"></div>
-                        <button class="ui black basic button"><a href="/dashboard" data-nodename={{nodename}}>{{_ "details"}}</a></button>
-                    </div>
+                <div class="row">
+                <div class="ui divider"></div>
+               <!--  <button class="ui black basic button"><a class="details" href="/dash" data-nodename="Moara Domneasca 1" >{{_ "details"}}</a></button> -->
+                                    </div>
                    
                     {{/if}}
                     {{#if $.Session.equals 'senzor' "Senzor_5" }}
@@ -354,10 +359,10 @@
                             <div id="card" class="ui fluid card">
                                 <div class="content">
                                     <div class="header left floated card_title_mainboard">
-                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h10"}}
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h10main"}}
                                     </div>
                                 </div>
-                                <div class="extra center aligned content">
+                                <div class={{colorw1}}>
                                     <h1>{{$.Session.get 'sensorw1'}} cb</h1>
                                 </div>
                             </div>
@@ -366,10 +371,10 @@
                             <div id="card" class="ui  fluid  card">
                                 <div class="content">
                                     <div class="header  left floated card_title_mainboard">
-                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h30"}}
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h30main"}}
                                     </div>
                                 </div>
-                                <div class="extra center aligned content">
+                                <div class={{colorw2}}>
                                     <h1>{{$.Session.get 'sensorw2'}} cb</h1>
                                 </div>
                             </div>
@@ -379,10 +384,10 @@
                             <div id="card" class="ui  fluid  card">
                                 <div class="content">
                                     <div class="header  left floated card_title_mainboard">
-                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h50"}}
+                                        <i class="wi  wi-humidity larger_mainboard left floated wi-fw"></i> {{_ "h50main"}}
                                     </div>
                                 </div>
-                                <div class="extra center aligned content">
+                                <div class={{colorw3}}>
                                     <h1>{{$.Session.get 'sensorw3'}} cb</h1>
                                 </div>
                             </div>
@@ -409,7 +414,7 @@
                                         <i class="wi  wi-thermometer-exterior larger_mainboard left floated wi-fw"></i> {{_ "air_temp_header"}}
                                     </div>
                                 </div>
-                                <div class="extra center aligned content">
+                                <div class={{colorsensorair_temp}}>
                                     <h1>{{$.Session.get 'sensorair_temp'}} <strong>°C</strong> </h1>
                                 </div>
                             </div>
@@ -469,15 +474,15 @@
                             </div>
                         </div>
                     </div>
-                        <div class="row">
-                        <div class="ui divider"></div>
-                        <button class="ui black basic button"><a href="/dashboard" data-nodename={{nodename}}>{{_ "details"}}</a></button>
-                    </div>
+               <div class="row">
+                <div class="ui divider"></div>
+<!--                 <button class="ui black basic button"><a class="details" href="/dash" data-nodename="CERES Show">{{_ "details"}}</a></button>
+                                     -->                                    </div> 
                    
                     {{/if}}
                 </div>
             </div>
-            <div class="eight wide column">
+            <div class="six wide column">
                 <div class="ui stackable grid centered fluid raised segment ">
                         
                               <!-- settings icon in mainboard -->
@@ -514,11 +519,8 @@
                         </div> -->
 
                     <h1>{{_ "mainboard_info"}}</h1>
-                    <div class="row">
-                        <div class="ui sixteen wide column">
-                            <h1 class="ui fluid green raised segment">{{_ "no_reco"}}</h1>
-                        </div>
-                    </div>
+                   {{alerts}}
+                   {{> alert}}
                     <div class="row">
                         <div class="ui sixteen wide column">
                             <h1 class="ui fluid red raised segment">{{_ "dummy_alert1"}}</h1>
@@ -533,4 +535,14 @@
             </div>
         </div>
     </div>
+</template>
+
+<template name="alert">
+    
+    <div class="row">
+                        <div class="ui sixteen wide column">
+                            <h1 class="ui fluid green raised segment">{{$.Session.get 'alert'}}</h1>
+                        </div>
+                    </div>
+    
 </template>

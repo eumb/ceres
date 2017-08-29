@@ -1,19 +1,27 @@
 import { Template } from "meteor/templating";
 import { WorkEvents } from "../imports/collections/sensors.js";
 
-/*
-Template.body.onCreated(function () {
-    var self = this;
 
-    self.autorun(function() {
-        //self.subscribe("sensornames",function(){
-           //});
-         subscriptions.subscribe('events',function(){
-         	
-         });
-         //subscriptions.subscribe("sensorvalues", Session.get("senzor"));
-    });
-  });*/
+/*Template.fisa_tehno.onCreated(function() {
+  var self = this;
+
+  self.autorun(function() {
+
+    self.subscribe("events");
+    
+
+  });
+
+});*/
+
+
+Tracker.autorun(function () {
+  
+    Meteor.subscribe("events");
+    //subscriptions.subscribe('sensorvalues', Session.get("senzor"));
+
+});
+
 
 function drawTimeLine(){
   var container = document.getElementById('visualization');
@@ -22,9 +30,7 @@ function drawTimeLine(){
   var options = {
     width: '1200px',
     height: '400px',
-    moment: function(date) {
-    return vis.moment(date).utcOffset('+03:00');
-	}
+ 
   };
   var timeline = new vis.Timeline(container, data, options);
 
@@ -37,17 +43,19 @@ function timelineEvents() {
   eventset = WorkEvents.find().fetch();
 
   console.log(eventset)
+  console.log(WorkEvents.find({}).fetch())
 
-  event= _.pluck(eventset, "event_content");
+  operation= _.pluck(eventset, "operation");
+  //obs=_.pluck(eventset, "obs");
   scale = _.pluck(eventset, "created_at");
 
   //console.log(day);
   //console.log(event)
-  for (i = event.length; i >= 0; i--) {
+  for (i = operation.length; i >= 0; i--) {
       eventsData.push({
-      start: moment(scale[i]).format('YYYY-MM-DD H:mm'),
+      start: moment(scale[i]).zone("+3:00").format('YYYY-MM-DD H:mm'),
 /*		start:scale[i],*/
-      content: event[i]
+      content: operation[i]
     });
 
     }

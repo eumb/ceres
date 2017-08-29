@@ -1,0 +1,273 @@
+<!-- 
+
+{{> c3 data=Soil_t id="chart2"}}
+{{> c3 data=Air_t id="chart3"}}
+
+ -->
+
+
+<template name="stats">
+    <div class="ui stackable grid ">
+        <!-- For Senzor 1 -->
+    {{#if Template.subscriptionsReady}} 
+     {{#if $.Session.equals 'chartFor' "Senzor_1"}}
+        <h3 class="nodename">{{$.Session.get 'SenzorDescription'}} </h3>
+		 <div class="sixteen wide column">
+	    	<div class="ui fluid card">
+	    		<div class="content">
+	           <div class="header average_title">
+	                        <i class="wi  wi-humidity larger left floated wi-fw"></i>
+	                            {{_ "soil_humid_header"}}
+	                            <span class="centered floated"></span>
+	                        </div>
+			</div>
+			<div class="content">
+			            
+			         			{{> c3 data=Humidity id="chart1"}}
+			            
+			</div>
+	    	</div>
+	     </div>
+	     <div class="sixteen wide column">
+	    	<div class="ui fluid card">
+	    		<div class="content">
+	           <div class="header average_title">
+	                        <i class="wi  wi-humidity larger left floated wi-fw"></i>
+	                            {{_ "soil_temp_header"}}
+	                            <span class="centered floated"></span>
+	                        </div>
+			</div>
+			<div class="content">
+			            
+			         			{{> c3 data=Soil_t id="chart2"}}
+			            
+			</div>
+	    	</div>
+	     </div>
+    
+      {{/if}}
+    {{else}} {{> spinner}} 
+    {{/if}}
+        <!-- End Senzor_1 -->
+        <!-- For Senzor 2 -->
+      {{#if Template.subscriptionsReady}}  {{#if $.Session.equals 'chartFor' "Senzor_2"}}
+        
+             <h3 class="nodename">{{$.Session.get 'SenzorDescription'}} </h3> 
+		 <div class="sixteen wide column">
+	    	<div class="ui fluid card">
+	    		<div class="content">
+	           <div class="header average_title">
+	                        <i class="wi  wi-humidity larger left floated wi-fw"></i>
+	                            {{_ "soil_humid_header"}}
+	                            <span class="centered floated"></span>
+	                        </div>
+			</div>
+			<div class="content">
+			            
+			         			{{> c3 data=Humidity id="chart1"}}
+			            
+			</div>
+	    	</div>
+	     </div>
+	     <div class="sixteen wide column">
+	    	<div class="ui fluid card">
+	    		<div class="content">
+	           <div class="header average_title">
+	                        <i class="wi  wi-thermometer  larger left floated wi-fw"></i>
+	                            {{_ "soil_temp_header"}}
+	                            <span class="centered floated"></span>
+	                        </div>
+			</div>
+			<div class="content">
+			            
+			         			{{> c3 data=Soil_t id="chart2"}}
+			            
+			</div>
+	    	</div>
+	     </div>
+       {{/if}} {{else}} {{> spinner}} {{/if}}
+        <!-- End Senzor_2 -->
+        <!-- For Senzor_3 -->
+       {{#if Template.subscriptionsReady}}  {{#if $.Session.equals 'chartFor' "Senzor_3"}}
+            <h3 class="nodename">{{$.Session.get 'SenzorDescription'}} </h3>
+        <!-- Umiditate -->
+		 <div class="sixteen wide column">
+	    	<div class="ui fluid card">
+	    		<div class="content">
+	           <div class="header average_title">
+	                        <i class="wi  wi-humidity larger left floated wi-fw"></i>
+	                            {{_ "soil_humid_header"}}
+	                            <span class="centered floated"></span>
+	                        </div>
+			</div>
+			<div class="content">
+			            
+			         			{{> c3 data=Humidity id="chart1"}}
+			            
+			</div>
+	    	</div>
+	     </div>
+	     <div class="sixteen wide column">
+	    	<div class="ui fluid card">
+	    		<div class="content">
+	           <div class="header average_title">
+	                        <i class="wi  wi-thermometer  larger left floated wi-fw"></i>
+	                            {{_ "soil_temp_header"}}
+	                            <span class="centered floated"></span>
+	                        </div>
+			</div>
+			<div class="content">
+			            
+			         			{{> c3 data=Soil_t id="chart2"}}
+			            
+			</div>
+	    	</div>
+	     </div>
+       {{/if}} {{else}} {{> spinner}}  {{/if}}
+        <!-- For Senzor 4 -->
+         {{#if Template.subscriptionsReady}}  {{#if $.Session.equals 'chartFor' "Senzor_4"}}
+              <h3 class="nodename">{{$.Session.get 'SenzorDescription'}} </h3>
+        <!-- Umiditate -->
+ 
+ 
+		 <div class="sixteen wide column">
+	    	<div class="ui fluid card">
+	    		<div class="content">
+	           <div class="header average_title">
+	                        <i class="wi  wi-humidity  larger left floated wi-fw"></i>
+	                            {{_ "soil_humid_header"}}
+	                            <span class="centered floated"></span>
+	                        </div>
+			</div>
+			<div class="content">
+			            
+			         			{{> c3 data=Humidity id="chart1"}}
+			            
+			</div>
+	    	</div>
+	     </div>
+	     <div class="sixteen wide column">
+	    	<div class="ui fluid card">
+	    		<div class="content">
+	           <div class="header average_title">
+	                        <i class="wi  wi-thermometer larger left floated wi-fw"></i>
+	                            {{_ "soil_temp_header"}}
+	                            <span class="centered floated"></span>
+	                        </div>
+			</div>
+			<div class="content">
+			            
+			         			{{> c3 data=Soil_t id="chart2"}}
+			            
+			</div>
+	    	</div>
+	     </div>
+	     	     <div class="sixteen wide column">
+	    	<div class="ui fluid card">
+	    		<div class="content">
+	           <div class="header average_title">
+	                        <i class="wi  wi-thermometer-exterior larger left floated wi-fw"></i>
+	                           {{_ "air_temp_header"}}
+	                            <span class="centered floated"></span>
+	                        </div>
+			</div>
+			<div class="content">
+			            
+			         			{{> c3 data=Air_t id="chart3"}}
+			            
+			</div>
+	    	</div>
+	    		    		<div class="ui fluid card">
+	    		<div class="content">
+	           <div class="header average_title">
+	                        <i class="wi  wi-humidity larger left floated wi-fw"></i>
+	                            {{_ "pluv3_header"}}
+	                            <span class="centered floated"></span>
+	                        </div>
+			</div>
+			<div class="content">
+			            
+			         			{{> c3 data=Precip id="chart4"}}
+			            
+			</div>
+	    	</div>
+	     </div>
+   
+
+
+      
+       {{/if}} {{else}} {{> spinner}}  {{/if}}
+        <!-- End Senzor_4 -->
+        <!-- Senzor_5 -->
+        {{#if Template.subscriptionsReady}}  {{#if $.Session.equals 'chartFor' "Senzor_5"}}
+        <h3 class="nodename">{{$.Session.get 'SenzorDescription'}} </h3>
+		 <div class="sixteen wide column">
+	    	<div class="ui fluid card">
+	    		<div class="content">
+	           <div class="header average_title">
+	                        <i class="wi  wi-humidity larger left floated wi-fw"></i>
+	                            {{_ "soil_humid_header"}}
+	                            <span class="centered floated"></span>
+	                        </div>
+			</div>
+			<div class="content">
+			            
+			         			{{> c3 data=Humidity id="chart1"}}
+			            
+			</div>
+	    	</div>
+	     </div>
+	     <div class="sixteen wide column">
+	    	<div class="ui fluid card">
+	    		<div class="content">
+	           <div class="header average_title">
+	                        <i class="wi  wi-thermometer larger left floated wi-fw"></i>
+	                            {{_ "soil_temp_header"}}
+	                            <span class="centered floated"></span>
+	                        </div>
+			</div>
+			<div class="content">
+			            
+			         			{{> c3 data=Soil_t id="chart2"}}
+			            
+			</div>
+	    	</div>
+	     </div>
+
+	     	     	     <div class="sixteen wide column">
+	    	<div class="ui fluid card">
+	    		<div class="content">
+	           <div class="header average_title">
+	                        <i class="wi  wi-thermometer-exterior larger left floated wi-fw"></i>
+	                            {{_ "air_temp_header"}}
+	                            <span class="centered floated"></span>
+	                        </div>
+			</div>
+			<div class="content">
+			            
+			         			{{> c3 data=Air_t id="chart3"}}
+			            
+			</div>
+	    	</div>
+
+	    		<div class="ui fluid card">
+	    		<div class="content">
+	           <div class="header average_title">
+	                        <i class="wi  wi-raindrops larger left floated wi-fw"></i>
+	                            {{_ "pluv3_header"}}
+	                            <span class="centered floated"></span>
+	                        </div>
+			</div>
+			<div class="content">
+			            
+			         			{{> c3 data=Precip id="chart4"}}
+			            
+			</div>
+	    	</div>
+	     </div>
+       {{/if}} {{else}} {{> spinner}}  {{/if}}
+        <!-- End Senzor_5 -->
+    </div>
+    <!-- grid -->
+   
+</template>
